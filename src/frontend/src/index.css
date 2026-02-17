@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.75rem;
+        --background: 0.99 0.01 330;
+        --foreground: 0.2 0.02 330;
+        --card: 1 0 0;
+        --card-foreground: 0.2 0.02 330;
+        --popover: 1 0 0;
+        --popover-foreground: 0.2 0.02 330;
+        --primary: 0.6 0.18 15;
+        --primary-foreground: 0.99 0.01 15;
+        --secondary: 0.96 0.02 330;
+        --secondary-foreground: 0.2 0.02 330;
+        --muted: 0.96 0.02 330;
+        --muted-foreground: 0.5 0.02 330;
+        --accent: 0.96 0.02 330;
+        --accent-foreground: 0.2 0.02 330;
+        --destructive: 0.577 0.245 27.325;
+        --destructive-foreground: 0.99 0.01 330;
+        --border: 0.92 0.02 330;
+        --input: 0.92 0.02 330;
+        --ring: 0.6 0.18 15;
+        --chart-1: 0.646 0.222 41.116;
+        --chart-2: 0.6 0.118 184.704;
+        --chart-3: 0.398 0.07 227.392;
+        --chart-4: 0.828 0.189 84.429;
+        --chart-5: 0.769 0.188 70.08;
+    }
+
+    .dark {
+        --background: 0.15 0.02 330;
+        --foreground: 0.98 0.01 330;
+        --card: 0.2 0.02 330;
+        --card-foreground: 0.98 0.01 330;
+        --popover: 0.25 0.02 330;
+        --popover-foreground: 0.98 0.01 330;
+        --primary: 0.7 0.18 15;
+        --primary-foreground: 0.15 0.02 330;
+        --secondary: 0.25 0.02 330;
+        --secondary-foreground: 0.98 0.01 330;
+        --muted: 0.25 0.02 330;
+        --muted-foreground: 0.65 0.02 330;
+        --accent: 0.35 0.02 330;
+        --accent-foreground: 0.98 0.01 330;
+        --destructive: 0.65 0.2 27.325;
+        --destructive-foreground: 0.98 0.01 330;
+        --border: 0.3 0.02 330;
+        --input: 0.3 0.02 330;
+        --ring: 0.65 0.15 15;
+        --chart-1: 0.488 0.243 264.376;
+        --chart-2: 0.696 0.17 162.48;
+        --chart-3: 0.769 0.188 70.08;
+        --chart-4: 0.627 0.265 303.9;
+        --chart-5: 0.645 0.246 16.439;
+    }
+
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@layer utilities {
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes scale-in {
+        from {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes slide-up {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slide-up-delayed {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes float-up {
+        0% {
+            opacity: 0;
+            transform: translateY(0) scale(0);
+        }
+        10% {
+            opacity: 1;
+            transform: translateY(-10px) scale(1);
+        }
+        90% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(-100vh) scale(0.5);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fade-in 0.6s ease-out;
+    }
+
+    .animate-scale-in {
+        animation: scale-in 0.8s ease-out;
+    }
+
+    .animate-slide-up {
+        animation: slide-up 0.8s ease-out 0.2s both;
+    }
+
+    .animate-slide-up-delayed {
+        animation: slide-up-delayed 0.8s ease-out 0.4s both;
+    }
+
+    .hearts-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 10;
+    }
+
+    .floating-heart {
+        position: absolute;
+        bottom: -50px;
+        width: 24px;
+        height: 24px;
+        color: oklch(0.7 0.18 15);
+        animation: float-up 4s ease-in infinite;
+        opacity: 0;
+    }
+}

@@ -1,0 +1,5 @@
+{
+  "frontend/src/App.tsx": "Main confession app component with updated message text (\"will you like to know me\" with proper punctuation), featuring interactive Yes/No buttons with unlimited playful \"No\" button movement and random sweet pleading messages, plus a warm success screen displaying \"Thankkk youuuu thankkkk youuu veryyyy muchhh 💛💛💛\" with soft fade-in and floating hearts animation.",
+  "frontend/src/index.css": "Global styles with OKLCH color system using soft rose/pink tones, custom keyframe animations for fade-in, scale-in, slide-up effects with delayed variant, and floating hearts animation for the success state.",
+  "frontend/src/hooks/useQueries.ts": "Empty file as no backend queries are needed for this purely frontend application."
+}
